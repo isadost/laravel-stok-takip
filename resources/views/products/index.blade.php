@@ -21,6 +21,7 @@
                             <th class="py-2">Kategori</th>
                             <th class="py-2">Adet</th>
                             <th class="py-2">Fiyat</th>
+                            <th class="py-2">İşlem</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,15 @@
                                 <td class="py-2">{{ $product->category->name }}</td>
                                 <td class="py-2">{{ $product->quantity }}</td>
                                 <td class="py-2">{{ number_format($product->price, 2) }}</td>
+                                <td class="py-2">
+    <a href="{{ route('products.edit', $product) }}" class="text-indigo-600 mr-3">Düzenle</a>
+    <form method="POST" action="{{ route('products.destroy', $product) }}" class="inline"
+          onsubmit="return confirm('Bu ürünü silmek istediğine emin misin?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="text-red-600">Sil</button>
+    </form>
+</td>
                             </tr>
                         @endforeach
                     </tbody>
