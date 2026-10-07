@@ -8,13 +8,28 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $products = Product::with('category')->latest()->paginate(10);
+ public function index(Request $request)
+{
+    $products = Product::with('category')
+        ->when($request->filled('search'), function ($query) use ($request) {
+            $term = $request->input('search');
+            $query->where(function ($q) use ($term) {
+                $q->where('name', 'like', "%{$term}%")
+                  ->orWhere('sku', 'like', "%{$term}%");
+            });
+        })
+        ->when($request->filled('category_id'), function ($query) use ($request) {
+            $query->where('category_id', $request->input('category_id'));
+        })
+        ->latest()
+        ->orderByDesc('id')
+        ->paginate(10)
+        ->withQueryString();
 
-        return view('products.index', compact('products'));
-    }
+    $categories = Category::orderBy('name')->get();
 
+    return view('products.index', compact('products', 'categories'));
+}
     public function create()
     {
         $categories = Category::orderBy('name')->get();

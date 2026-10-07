@@ -118,4 +118,42 @@ class ProductTest extends TestCase
 
         $this->assertDatabaseMissing('products', ['id' => $product->id]);
     }
+        public function test_products_can_be_searched_by_name(): void
+    {
+        $category = Category::factory()->create();
+        Product::factory()->create(['category_id' => $category->id, 'name' => 'Kırmızı Kalem']);
+        Product::factory()->create(['category_id' => $category->id, 'name' => 'Mavi Defter']);
+
+        $this->actingAs(User::factory()->create())
+            ->get('/products?search=Kalem')
+            ->assertSee('Kırmızı Kalem')
+            ->assertDontSee('Mavi Defter');
+    }
+
+    public function test_products_can_be_filtered_by_category(): void
+    {
+        $first = Category::factory()->create();
+        $second = Category::factory()->create();
+        Product::factory()->create(['category_id' => $first->id, 'name' => 'Birinci Ürün']);
+        Product::factory()->create(['category_id' => $second->id, 'name' => 'İkinci Ürün']);
+
+        $this->actingAs(User::factory()->create())
+            ->get('/products?category_id=' . $first->id)
+            ->assertSee('Birinci Ürün')
+            ->assertDontSee('İkinci Ürün');
+    }
+
+    public function test_low_stock_products_are_highlighted(): void
+    {
+        $category = Category::factory()->create();
+        Product::factory()->create([
+            'category_id' => $category->id,
+            'quantity' => 2,
+            'min_stock' => 10,
+        ]);
+
+        $this->actingAs(User::factory()->create())
+            ->get('/products')
+            ->assertSee('bg-red-50', false);
+    }
 }
