@@ -1,5 +1,5 @@
 # Laravel Stok Takip
-![Tests](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml/badge.svg)
+[![Tests](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml/badge.svg)](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml)
 
 Laravel ile geliştirilmiş, kullanıcı girişi olan bir stok takip uygulaması. Ürün yönetimi, arama, kategori filtresi ve düşük stok uyarısı içerir. Otomatik testlerle doğrulanmıştır.
 
