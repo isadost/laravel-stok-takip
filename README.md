@@ -42,7 +42,7 @@ php artisan serve
 php artisan test
 ```
 
-37 test bulunur: kimlik doğrulama akışları (Breeze) ve ürün işlemleri. Ürün testleri şunları kapsar: girişsiz erişimin engellenmesi, ürün oluşturma, yinelenen SKU'nun reddi, negatif adedin reddi, güncellemede kendi SKU'sunu koruma, başka ürünün SKU'suyla çakışmanın engellenmesi, silme, arama, kategori filtresi ve düşük stok vurgusu.
+Kimlik doğrulama akışları ve ürün işlemlerini kapsayan otomatik testler, kimlik doğrulama akışları (Breeze) ve ürün işlemleri. Ürün testleri şunları kapsar: girişsiz erişimin engellenmesi, ürün oluşturma, yinelenen SKU'nun reddi, negatif adedin reddi, güncellemede kendi SKU'sunu koruma, başka ürünün SKU'suyla çakışmanın engellenmesi, silme, arama, kategori filtresi ve düşük stok vurgusu.
 
 ## Tasarım Kararları
 
