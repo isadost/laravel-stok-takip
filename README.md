@@ -1,14 +1,11 @@
 # Laravel Stok Takip
-[![Tests](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml/badge.svg)](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml)
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b32a72 (Fix CI badge link and update README)
+[![Tests](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml/badge.svg)](https://github.com/isadost/laravel-stok-takip/actions/workflows/tests.yml)
+
 Laravel ile geliştirilmiş, kullanıcı girişi olan bir stok takip uygulaması. Ürün yönetimi, arama, kategori filtresi ve düşük stok uyarısı içerir. Otomatik testlerle doğrulanmıştır.
 
 ![Ürün listesi](docs/liste.png)
 ![Ürün formu](docs/form.png)
-
 
 ## Özellikler
 
@@ -45,11 +42,7 @@ php artisan serve
 php artisan test
 ```
 
-<<<<<<< HEAD
-Kimlik doğrulama akışları ve ürün işlemlerini kapsayan otomatik testler, kimlik doğrulama akışları (Breeze) ve ürün işlemleri. Ürün testleri şunları kapsar: girişsiz erişimin engellenmesi, ürün oluşturma, yinelenen SKU'nun reddi, negatif adedin reddi, güncellemede kendi SKU'sunu koruma, başka ürünün SKU'suyla çakışmanın engellenmesi, silme, arama, kategori filtresi ve düşük stok vurgusu.
-=======
-Kimlik doğrulama akışlarını (Breeze) ve ürün işlemlerini kapsayan otomatik testler bulunur. Ürün testleri şunları kapsar: kimlik doğrulama akışları (Breeze) ve ürün işlemleri. Ürün testleri şunları kapsar: girişsiz erişimin engellenmesi, ürün oluşturma, yinelenen SKU'nun reddi, negatif adedin reddi, güncellemede kendi SKU'sunu koruma, başka ürünün SKU'suyla çakışmanın engellenmesi, silme, arama, kategori filtresi ve düşük stok vurgusu.
->>>>>>> 9b32a72 (Fix CI badge link and update README)
+Kimlik doğrulama akışlarını (Breeze) ve ürün işlemlerini kapsayan otomatik testler bulunur. Ürün testleri şunları kapsar: girişsiz erişimin engellenmesi, ürün oluşturma, yinelenen SKU'nun reddi, negatif adedin reddi, güncellemede kendi SKU'sunu koruma, başka ürünün SKU'suyla çakışmanın engellenmesi, silme, arama, kategori filtresi ve düşük stok vurgusu. Testler her push'ta GitHub Actions ile otomatik çalışır.
 
 ## Tasarım Kararları
 
@@ -60,6 +53,6 @@ Kimlik doğrulama akışlarını (Breeze) ve ürün işlemlerini kapsayan otomat
 
 ## Yapılacaklar
 
-- [ ] Kategori yönetim ekranı
+- [x] Kategori yönetim ekranı
 - [x] GitHub Actions ile testlerin otomatik çalışması
 - [ ] Selenium ile arayüz testleri
