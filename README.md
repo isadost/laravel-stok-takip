@@ -50,6 +50,7 @@ Kimlik doğrulama akışlarını (Breeze) ve ürün işlemlerini kapsayan otomat
 - **Fiyat tipi:** Para değerleri `float` yerine `decimal(10,2)` olarak saklanır, yuvarlama hatası olmaz.
 - **N+1 önlemi:** Liste sayfasında kategoriler `with('category')` ile tek sorguda yüklenir.
 - **Sayfalama:** Filtreler `withQueryString()` ile sayfalar arasında korunur.
+- **Kategori ekleme, düzenleme ve silme (ürünü olan kategori silinemez)
 
 ## Yapılacaklar
 
