@@ -15,6 +15,7 @@ Laravel ile geliştirilmiş, kullanıcı girişi olan bir stok takip uygulaması
 - Ad veya SKU ile arama, kategoriye göre filtreleme
 - Adedi minimum stoğa eşit veya altında olan ürünlerin vurgulanması
 - Sayfalama (arama ve filtre sayfalar arasında korunur)
+- Kategori ekleme, düzenleme ve silme (ürünü olan kategori silinemez)
 
 ## Teknolojiler
 
