@@ -16,8 +16,6 @@ Laravel ile geliştirilmiş, kullanıcı girişi olan bir stok takip uygulaması
 - Adedi minimum stoğa eşit veya altında olan ürünlerin vurgulanması
 - Sayfalama (arama ve filtre sayfalar arasında korunur)
 - Kategori ekleme, düzenleme ve silme (ürünü olan kategori silinemez)
-- Kategori ekleme, düzenleme ve silme (ürünü olan kategori silinemez)
-- Kategori ekleme, düzenleme ve silme (ürünü olan kategori silinemez)
 
 ## Teknolojiler
 
@@ -53,7 +51,6 @@ Kimlik doğrulama akışlarını (Breeze) ve ürün işlemlerini kapsayan otomat
 - **Fiyat tipi:** Para değerleri `float` yerine `decimal(10,2)` olarak saklanır, yuvarlama hatası olmaz.
 - **N+1 önlemi:** Liste sayfasında kategoriler `with('category')` ile tek sorguda yüklenir.
 - **Sayfalama:** Filtreler `withQueryString()` ile sayfalar arasında korunur.
-- **Kategori:** Ekleme, düzenleme ve silme (ürünü olan kategori silinemez).
 
 ## Yapılacaklar
 
